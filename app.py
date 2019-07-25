@@ -96,7 +96,7 @@ def process():
     else:
         profile['spending_strategy'] = 'Liability_Ratio'
 
-    forecast_output = get_forecast_projection(profile, config, forecast_config)
+    forecast_output = get_forecast_projection(profile, config, forecast_config,num_sim_runs=20)
     asset_allocation_tiers = calc_granular_model_port_allocation(profile, config)
 
     output = {**forecast_output,'portfolio':asset_allocation_tiers}
