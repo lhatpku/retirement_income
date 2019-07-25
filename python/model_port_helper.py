@@ -16,9 +16,9 @@ def calc_model_port_ret_across_sim_runs_at_projection_year(model_port_id,project
 
     #Determine model_portfolio asset allocation weights 1 x 21 matrix
     model_port_asset_class_matrix = dfModelPorts.iloc[[model_port_id-1]]
-    
+ 
     #Calculate model portfolio simulated output across all sim runs for specified projection year
-    model_port_sim_run_output = np.matmul(model_port_asset_class_matrix, asset_class_sim_run_matrix)
+    model_port_sim_run_output = np.dot(model_port_asset_class_matrix,asset_class_sim_run_matrix)
     
     return model_port_sim_run_output
 

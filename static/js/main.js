@@ -250,23 +250,21 @@ $(document).ready(function(){
       $('#plan-loader').fadeOut();
       $('#plan-demo').fadeIn();
 
-      console.log(data.error);
+      wealth_plot(data,30);
+      income_plot(data,30);
+      port_plot(data.portfolio,parseInt($('#age').val()));
 
-      // wealth_plot(data,30);
-      // income_plot(data,30);
-      // port_plot(data.portfolio,parseInt($('#age').val()));
+      var rangeSliderValueElement = document.getElementById('portfolio-advice-age');
+      rangeSlider.noUiSlider.on('update', function (values, handle) {
+        var age_Output = parseFloat(values[handle]).toFixed(0)
+        rangeSliderValueElement.innerHTML = `<span><strong>Age</strong>: ${age_Output}</span>`;
+        port_plot(data.portfolio,String(age_Output));
+      });
 
-      // var rangeSliderValueElement = document.getElementById('portfolio-advice-age');
-      // rangeSlider.noUiSlider.on('update', function (values, handle) {
-      //   var age_Output = parseFloat(values[handle]).toFixed(0)
-      //   rangeSliderValueElement.innerHTML = `<span><strong>Age</strong>: ${age_Output}</span>`;
-      //   port_plot(data.portfolio,String(age_Output));
-      // });
-
-      // $('input:radio[name="percentile"]').change(function() {
-      //   wealth_plot(data,parseFloat($(this).val()));
-      //   income_plot(data,parseFloat($(this).val()));
-      // })
+      $('input:radio[name="percentile"]').change(function() {
+        wealth_plot(data,parseFloat($(this).val()));
+        income_plot(data,parseFloat($(this).val()));
+      })
 
     });
   });
