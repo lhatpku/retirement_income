@@ -1,0 +1,99 @@
+{% extends "templates.html" %}
+
+{% block forecast %}
+    <div class="row">
+        <div class="one wide column"></div>
+        <div class="six wide column" id="wealth-plot" style="min-width: 310px; height: 400px; margin: 0 auto">
+        </div>
+        <div class="two wide column">
+        <form class="ui form center" id="percentile">
+            <div class="grouped fields">
+            <label>Percentile</label>
+            <div class="field">
+                <div class="ui slider checkbox">
+                <input type="radio" name="percentile" checked="checked" value="30">
+                <label>30%</label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui slider checkbox">
+                <input type="radio" name="percentile" value="50">
+                <label>50%</label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui slider checkbox">
+                <input type="radio" name="percentile" value="70">
+                <label>70%</label>
+                </div>
+            </div>
+            </div>
+        </form>
+        </div>
+        <div class="six wide column" id="income-plot" style="min-width: 310px; height: 400px; margin: 0 auto">
+        </div>
+        <div class="one wide column"></div>
+    </div>
+{% endblock %}
+
+{% block advice %}
+    <div class="row">
+        <div class="one wide column"></div>
+        <div class="five wide column" id="annuity-advice" style="min-width: 310px; height: 400px; margin: 0 auto">
+        </div>
+        <div class="four wide column" id="card-advice">
+            <div class="ui shape" style="margin-left:8%">
+                <button class="circular ui icon button teal" id="flip" style="display:inline-block; margin:0 auto 1rem auto"><i class="play icon"></i></button>
+                <div class="sides">
+                    <div class="active side">
+                        <div class="ui card">
+                            <div class="image">
+                                <img src="{{ url_for('static', filename='img/male_mid.jpg') }}">
+                            </div>
+                            <div class="content">
+                                <a class="Header">User Profile</a>
+                                <div class="description">
+                                    <span id="advice-result-1"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="side">
+                        <div class="ui card">
+                            <div class="image">
+                                <img src="{{ url_for('static', filename='img/male_pre.jpg') }}">
+                            </div>
+                            <div class="content">
+                                <a class="Header">User Profile</a>
+                                <div class="description">
+                                    <span id="advice-result-2"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="side">
+                        <div class="ui card">
+                            <div class="image">
+                                <img src="{{ url_for('static', filename='img/male_post.jpg') }}">
+                            </div>
+                            <div class="content">
+                                <a class="Header">User Profile</a>
+                                <div class="description">
+                                    <span id="advice-result-3"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="five wide column" id="portfolio-advice">
+            <div id="portfolio-advice-plot" style="min-width: 310px; margin: 0 auto"></div>
+            <div id="portfolio-advice-slider"></div>
+            <p id="portfolio-advice-age"></p>
+        </div>
+        <div class="one wide column"></div>
+    </div>
+{% endblock %}

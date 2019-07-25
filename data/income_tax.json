@@ -1,0 +1,13 @@
+{
+    "standard_deduction": 12200,
+    "tax_bracket": 
+        [
+            {"rate": 0.1,"lower_bracket":0,"upper_bracket":13850},
+            {"rate": 0.12,"lower_bracket":13851,"upper_bracket":52850},
+            {"rate": 0.22,"lower_bracket":52851,"upper_bracket":84200},
+            {"rate": 0.24,"lower_bracket":84201,"upper_bracket":160700},
+            {"rate": 0.32,"lower_bracket":160701,"upper_bracket":204100},
+            {"rate": 0.35,"lower_bracket":204101,"upper_bracket":510300},
+            {"rate": 0.37,"lower_bracket":510301,"upper_bracket":100000000}
+        ]
+}

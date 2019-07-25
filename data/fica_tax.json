@@ -1,0 +1,8 @@
+{
+    "social_security": {
+        "rate": 0.062
+    },
+    "medicare": {
+        "rate": 0.0145
+    }
+}

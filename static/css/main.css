@@ -1,0 +1,40 @@
+.questionnaire{
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.inline-input {
+  display: inline-block;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid black;
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: 'Playball', cursive;
+}
+
+h1 {
+  color: #fff;
+  font-size: 6.4rem;
+  line-height: 6.4rem;
+  text-transform: uppercase;
+  font-family: 'Lora', serif;
+}
+
+.slider-wrapper {
+  display: inline-block;
+  width: 20px;
+  height: 150px;
+  padding: 0;
+}
+.slider-wrapper input {
+  width: 150px;
+  height: 20px;
+  margin: 0;
+  transform-origin: 105px 95px;
+  transform: rotate(-90deg);
+  display: inline-block;
+  padding:0;
+}
