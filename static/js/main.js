@@ -250,6 +250,8 @@ $(document).ready(function(){
       $('#plan-loader').fadeOut();
       $('#plan-demo').fadeIn();
 
+      console.log(data.error);
+
       wealth_plot(data,30);
       income_plot(data,30);
       port_plot(data.portfolio,parseInt($('#age').val()));

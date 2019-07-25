@@ -12,7 +12,8 @@ from python.model_port_helper import calc_granular_model_port_allocation
 
 app = Flask(__name__)
 
-root_loc = 'data'
+cwd = os.getcwd()
+root_loc = os.path.join(cwd,'data')
 #######################
 # Tax Input
 #######################
@@ -95,10 +96,14 @@ def process():
     else:
         profile['spending_strategy'] = 'Liability_Ratio'
 
-    forecast_output = get_forecast_projection(profile, config, forecast_config)
-    asset_allocation_tiers = calc_granular_model_port_allocation(profile, config)
+    try:
+        forecast_output = get_forecast_projection(profile, config, forecast_config)
+        asset_allocation_tiers = calc_granular_model_port_allocation(profile, config)
 
-    output = {**forecast_output,'portfolio':asset_allocation_tiers}
+        output = {**forecast_output,'portfolio':asset_allocation_tiers,'error':'none'}
+    except Exception, e:
+        output = {'error':str(e)}
+    
 
     return jsonify(output)
 
