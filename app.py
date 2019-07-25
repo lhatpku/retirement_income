@@ -101,7 +101,7 @@ def process():
         asset_allocation_tiers = calc_granular_model_port_allocation(profile, config)
 
         output = {**forecast_output,'portfolio':asset_allocation_tiers,'error':'none'}
-    except Exception, e:
+    except Exception as e:
         output = {'error':str(e)}
     
 
