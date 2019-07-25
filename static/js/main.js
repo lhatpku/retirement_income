@@ -258,7 +258,14 @@ $(document).ready(function(){
       rangeSlider.noUiSlider.on('update', function (values, handle) {
         var age_Output = parseFloat(values[handle]).toFixed(0)
         rangeSliderValueElement.innerHTML = `<span><strong>Age</strong>: ${age_Output}</span>`;
-        port_plot(data.portfolio,String(age_Output));
+
+        var chart = $('#portfolio-advice-plot').highcharts();
+
+        chart.series[0].update({
+          data: data.portfolio[String(age_Output)]
+        }, true);
+
+        // port_plot(data.portfolio,String(age_Output));
       });
 
       $('input:radio[name="percentile"]').change(function() {
