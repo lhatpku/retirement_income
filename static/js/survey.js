@@ -229,8 +229,8 @@ var page2 = {
     "elements": [
         {
             "type":"panel",
-            "name": "essential",
-            "title": "Essential Spending",
+            "name": "freedom",
+            "title": "Freedom Spending",
             "elements":freedom_spending_list.map(d => mapToElementHigher(d))
         }
     ]
